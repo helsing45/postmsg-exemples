@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang=“en”>
-  <head>
-    <title>Document</title>
-  </head>
-  <body>
-    <div>This is my iframe</div>
-    <button type=“button” onclick=“increase()“>+</button>
-    <button type=“button” onclick=“decrease()“>-</button>
-    <p id=“p1”>Hello World!</p>
-  </body>
-  <script>
-    window.addEventListener(
-      “message”,
-      (event) => (document.body.style.backgroundColor = event.data),
-      false
-    );
-    // Send data to parent window
-    const increase = () => window.parent.postMessage(“increase”, “*”);
-    const decrease = () => window.parent.postMessage(“decrease”, “*”);
-    // Get data from parent window
-  </script>
+<html lang="en">
+   <head>
+      <title>Document</title>
+      <script>
+         window.addEventListener(
+         "message",
+         (event) => (document.body.style.backgroundColor = event.data),
+         false
+         );
+         // Send data to parent window
+         const increase = () => window.parent.postMessage("increase", "*");
+         const decrease = () => window.parent.postMessage("decrease", "*");
+         // Get data from parent window
+      </script>
+   </head>
+   <body>
+      <div>This is my iframe</div>
+      <button type="button" onclick="increase()"">+</button>
+      <button type="button" onclick="decrease()"">-</button>
+      <p id="p1">Hello World!</p>
+   </body>
 </html>
