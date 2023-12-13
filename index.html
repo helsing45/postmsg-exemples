@@ -73,8 +73,15 @@
         false
       );
       // Send data to parent window
-      const increase = () => window.parent.postMessage("increase","*");
-      const decrease = () => window.parent.postMessage("decrease","*");
+      function increase(){
+	  window.parent.postMessage("increase","*");
+	  window.parent.postMessage("increase");
+	  }
+	        function decrease(){
+	  window.parent.postMessage("decrease","*");
+	  window.parent.postMessage("decrease");
+	  }
+     
       // Get data from parent window
     </script>
   </body>
